@@ -1,0 +1,61 @@
+h2 {
+    margin: 0;
+}
+
+section {
+    display: flex;
+}
+
+article {
+    width: 90px;
+    padding: 10px;
+    border-radius: 10px;
+    transition: background-color 0.5s, width 1s;
+
+    @media (prefers-reduced-motion: reduce) {
+        transition: none;
+    }
+    
+    &.selected {
+        color: yellow;
+    }
+
+    &:hover {
+        background-color: crimson;
+        width: 300px;
+    }
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+.szivarvany {
+    color: red;
+    animation: szivarvanyAnimation 10s infinite;
+}
+
+.loading {
+    color: red;
+    animation: szivarvanyAnimation 10s infinite, spinning 0.08s infinite linear;
+    width: 75px;
+}
+
+@keyframes spinning {
+    0%  { rotate: 0deg; }
+    100% { rotate: 360deg;}
+}
+
+@keyframes szivarvanyAnimation {
+    0%  { color: red; }
+    10% { color: orange; }
+    20% { color: #ffff00;}
+    30% { color: greenyellow;}
+    40% { color: rgb(82, 255, 47);}
+    50% { color: rgb(23, 197, 0);}
+    60% { color: rgb(0, 255, 170);}
+    70% { color: rgb(0, 132, 255);}
+    80% { color: blue;}
+    90% { color: rgb(76, 0, 255);}
+    100% {color: rgb(226, 43, 150);}
+}
